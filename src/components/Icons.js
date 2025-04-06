@@ -1,6 +1,16 @@
 import React from "react";
 import { cx } from "../utils";
 
+/**
+ * A React component that renders a sun icon with animation effects.
+ *
+ * @param {Object} props - The component's properties.
+ * @prop {string} [props.className] - Additional CSS classes to be applied to the SVG element.
+ * @returns {JSX.Element} - The rendered SunIcon component.
+ *
+ * @example
+ * <SunIcon className="text-primary" />
+ */
 export const SunIcon = ({ className, ...rest }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -335,6 +345,16 @@ export const MoonIcon = ({ className, ...rest }) => (
   </svg>
 );
 
+/**
+ * Represents a functional component that renders an LinkedIn icon.
+ *
+ * @param {Object} props - The properties for the LinkedInIcon component.
+ * @param {string} [props.className] - Additional CSS class names to apply to the SVG element.
+ * @returns {JSX.Element} A React JSX element representing the LinkedIn icon.
+ *
+ * @example
+ * <LinkedinIcon className="my-icon" />
+ */
 export const LinkedinIcon = ({ className, ...rest }) => {
   return (
     <svg
@@ -364,6 +384,16 @@ export const LinkedinIcon = ({ className, ...rest }) => {
   );
 };
 
+/**
+ * A React component that renders a Twitter icon.
+ *
+ * @param {Object} props - The properties for the TwitterIcon component.
+ * @prop {string} [className] - Additional CSS classes to be applied to the icon container.
+ * @returns {JSX.Element} - The JSX element representing the Twitter icon.
+ *
+ * @example
+ * <TwitterIcon className="custom-icon" />
+ */
 export const TwitterIcon = ({ className, ...rest }) => {
   return (
     <svg
@@ -389,6 +419,16 @@ export const TwitterIcon = ({ className, ...rest }) => {
   );
 };
 
+/**
+ * A React component that renders an icon representing GitHub.
+ *
+ * @param {Object} props - The component's properties.
+ * @param {string} [props.className] - Additional CSS classes to apply to the icon.
+ * @returns {JSX.Element} - The rendered SVG element with the GitHub icon.
+ *
+ * @example
+ * <GithubIcon className="custom-icon" />
+ */
 export const GithubIcon = ({ className, ...rest }) => {
   return (
     <svg
@@ -409,6 +449,16 @@ export const GithubIcon = ({ className, ...rest }) => {
   );
 };
 
+/**
+ * A React component representing the Dribbble icon.
+ *
+ * @param {Object} props - The properties of the icon component.
+ * @param {string} [props.className] - Additional CSS classes to apply to the SVG element.
+ * @returns {JSX.Element} The rendered Dribbble icon as an SVG element.
+ *
+ * @example
+ * <DribbbleIcon className="custom-icon" />
+ */
 export const DribbbleIcon = ({ className, ...rest }) => {
   return (
     <svg

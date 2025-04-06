@@ -5,6 +5,16 @@ import React from 'react'
 import Tag from '../Elements/Tag';
 import { slug } from 'github-slugger';
 
+/**
+ * A React component that renders a home cover section with the most recent blog post.
+ *
+ * @param {Object} props - The component props.
+ * @param {Array<Object>} props.blogs - An array of blog objects to be sorted and displayed.
+ * @returns {JSX.Element} - Returns the JSX for the HomeCoverSection component.
+ *
+ * @example
+ * <HomeCoverSection blogs={blogsData} />
+ */
 const HomeCoverSection = ({blogs}) => {
 
     const sortedBlogs = sortBlogs(blogs);

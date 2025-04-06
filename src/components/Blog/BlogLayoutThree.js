@@ -3,6 +3,23 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+/**
+ * React component for rendering a blog post layout.
+ *
+ * @param {Object} props - The properties object.
+ * @param {Object} props.blog - The blog post data.
+ * @param {string} props.blog.url - The URL of the blog post.
+ * @param {Object} props.blog.image - The image data for the blog post.
+ * @param {string} props.blog.image.filePath - The file path of the blog post image.
+ * @param {string} props.blog.image.blurhashDataUrl - The blurhash data URL for lazy loading.
+ * @param {number} props.blog.image.width - The width of the blog post image.
+ * @param {number} props.blog.image.height - The height of the blog post image.
+ * @param {Array<Object>} props.blog.tags - The tags associated with the blog post.
+ * @param {string} props.blog.title - The title of the blog post.
+ * @param {string} props.blog.publishedAt - The publication date of the blog post in ISO format.
+ *
+ * @returns {JSX.Element} - The rendered BlogLayoutThree component.
+ */
 const BlogLayoutThree = ({ blog }) => {
   return (
     <div className="group flex flex-col items-center text-dark dark:text-light">

@@ -9,6 +9,11 @@ export const metadata = {
 };
 
 
+/**
+ * Returns the Contact component that renders a section for contacting information.
+ *
+ * @returns {JSX.Element} - A React JSX element representing the contact section.
+ */
 export default function Contact() {
   return (
     <section className="w-full h-auto md:h-[75vh] border-b-2 border-solid border-dark dark:border-light flex  flex-col md:flex-row items-center justify-center text-dark dark:text-light">

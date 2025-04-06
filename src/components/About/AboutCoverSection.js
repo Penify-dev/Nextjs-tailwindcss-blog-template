@@ -2,6 +2,10 @@ import Image from 'next/image'
 import React from 'react'
 import profileCharacter from "../../../public/character.png"
 
+/**
+ * React functional component that renders an about cover section with an image and text content.
+ * @returns {JSX.Element} - The rendered JSX element of the about cover section.
+ */
 const AboutCoverSection = () => {
   return (
     <section className='w-full md:h-[75vh] border-b-2 border-solid border-dark dark:border-light flex flex-col md:flex-row items-center justify-center text-dark dark:text-light'>

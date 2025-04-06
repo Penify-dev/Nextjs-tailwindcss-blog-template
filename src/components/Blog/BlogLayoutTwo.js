@@ -3,6 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+/**
+ * Renders a blog layout with an image and text content.
+ *
+ * @param {Object} props - The component's properties.
+ * @param {Object} props.blog - The blog object containing details to display.
+ * @param {string} props.blog.url - The URL of the blog post.
+ * @param {string} props.blog.image.filePath - The file path of the blog image.
+ * @param {string} props.blog.image.blurhashDataUrl - The blur hash data URL for the blog image.
+ * @param {string} props.blog.title - The title of the blog post.
+ * @param {Array} props.blog.tags - An array of tags associated with the blog post.
+ * @param {Date} props.blog.publishedAt - The date the blog post was published.
+ *
+ * @returns {JSX.Element} - The rendered blog layout component.
+ */
 const BlogLayoutTwo = ({ blog }) => {
   return (
     <div className="group grid grid-cols-12 gap-4 items-center text-dark dark:text-light">

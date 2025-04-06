@@ -53,6 +53,26 @@ export const metadata = {
   },
 };
 
+/**
+ * A React component that serves as the root layout for the application.
+ *
+ * @param {Object} props - The properties passed to this component.
+ * @param {React.ReactNode} props.children - Content to be rendered within the layout.
+ * @returns {React.ReactNode} - The rendered React element representing the root layout.
+ *
+ * This component renders a basic HTML structure with a header, footer,
+ * and a body that includes conditional rendering of a dark mode theme
+ * based on user preference or system settings. It also includes a script tag for
+ * handling theme switching and a class name for font styling using the `cx` utility.
+ *
+ * Example usage:
+ *
+ * ```jsx
+ * <RootLayout>
+ *   <Home />
+ * </RootLayout>
+ * ```
+ */
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
