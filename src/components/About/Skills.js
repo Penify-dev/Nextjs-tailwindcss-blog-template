@@ -14,6 +14,11 @@ const SkillList = [
   "sanity",
 ];
 
+/**
+ * React component that renders a section listing skills.
+ *
+ * @returns {JSX.Element} - The rendered JSX element for the Skills component.
+ */
 const Skills = () => {
   return (
     <section className="w-full flex flex-col p-5 xs:p-10 sm:p-12 md:p-16 lg:p-20 border-b-2 border-solid border-dark dark:border-light

@@ -10,6 +10,17 @@ export async function generateStaticParams() {
   return allBlogs.map((blog) => ({ slug: blog._raw.flattenedPath }));
 }
 
+/**
+ * Generates metadata for a blog post based on the provided parameters.
+ *
+ * @param {Object} params - The parameters object containing the slug of the blog post.
+ * @param {string} params.slug - The slug of the blog post to fetch metadata for.
+ * @returns {Promise<Object|null>} - A promise that resolves with an object containing openGraph and twitter properties, or null if no blog is found.
+ *
+ * Example:
+ * const result = await generateMetadata({ slug: "my-blog-post" });
+ * console.log(result);
+ */
 export async function generateMetadata({ params }) {
   const blog = allBlogs.find((blog) => blog._raw.flattenedPath === params.slug);
   if (!blog) {
@@ -56,6 +67,13 @@ export async function generateMetadata({ params }) {
   };
 }
 
+/**
+ * Generates the blog page content based on the provided parameters.
+ *
+ * @param {Object} params - The route parameters containing the slug of the blog post.
+ * @param {string} params.slug - The unique identifier for the blog post.
+ * @returns {JSX.Element} - The JSX element representing the blog page.
+ */
 export default function BlogPage({ params }) {
   const blog = allBlogs.find((blog) => blog._raw.flattenedPath === params.slug);
 

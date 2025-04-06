@@ -2,12 +2,22 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
+/**
+ * A functional component that renders a contact form for submitting project inquiries.
+ *
+ * @returns {JSX.Element} - The rendered contact form.
+ */
 export default function ContactForm() {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  /**
+   * Handles form submission by logging the data to the console.
+   *
+   * @param {Object} data - The data submitted from the form.
+   */
   const onSubmit = (data) => console.log(data);
   console.log(errors);
 

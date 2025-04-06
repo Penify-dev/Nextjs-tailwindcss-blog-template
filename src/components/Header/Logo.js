@@ -2,6 +2,12 @@ import Image from "next/image"
 import Link from "next/link"
 import profileImg from "@/public/profile-img.png"
 
+/**
+ * Renders a logo component that includes a link to the homepage.
+ * The logo consists of an image with a border and a text label.
+ *
+ * @returns {JSX.Element} - A React JSX element representing the logo.
+ */
 const Logo = () => {
   return (
     <Link href="/" className="flex items-center text-dark dark:text-light">

@@ -9,6 +9,11 @@ export const metadata = {
 };
 
 
+/**
+ * A React component that renders a contact section with a Lottie animation and a contact form.
+ *
+ * @returns {JSX.Element} - The rendered JSX for the contact section.
+ */
 export default function Contact() {
   return (
     <section className="w-full h-auto md:h-[75vh] border-b-2 border-solid border-dark dark:border-light flex  flex-col md:flex-row items-center justify-center text-dark dark:text-light">

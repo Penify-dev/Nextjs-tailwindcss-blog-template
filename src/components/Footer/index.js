@@ -5,12 +5,23 @@ import { DribbbleIcon, GithubIcon, LinkedinIcon, TwitterIcon } from "../Icons";
 import Link from "next/link";
 import siteMetadata from "@/src/utils/siteMetaData";
 
+/**
+ * A React component representing the footer of a website.
+ *
+ * @function
+ * @returns {JSX.Element} - The rendered footer component.
+ */
 const Footer = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  /**
+   * Handles the submission of data.
+   *
+   * @param {Object} data - The data to be submitted.
+   */
   const onSubmit = (data) => console.log(data);
   console.log(errors);
 
