@@ -8,6 +8,18 @@ const mdxComponents = {
     Image
 }
 
+/**
+ * React component to render MDX content from a blog post.
+ *
+ * @param {Object} props - The component props.
+ * @param {Object} props.blog - The blog post object containing the MDX content.
+ * @param {string} props.blog.body.code - The actual MDX code to be rendered.
+ * @returns {JSX.Element} - A React JSX element representing the rendered MDX content.
+ *
+ * @example
+ * // Example usage of RenderMdx component
+ * <RenderMdx blog={blogPost} />
+ */
 const RenderMdx = ({blog}) => {
 
     const MDXContent = useMDXComponent(blog.body.code)

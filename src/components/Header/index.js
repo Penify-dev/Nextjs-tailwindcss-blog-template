@@ -7,11 +7,22 @@ import { useThemeSwitch } from "../Hooks/useThemeSwitch";
 import { useState } from "react";
 import { cx } from "@/src/utils";
 
+/**
+ * Represents the header component of the application, featuring navigation, theme toggle, and social media links.
+ *
+ * @returns {JSX.Element} The rendered header component.
+ */
 const Header = () => {
 
   const [mode, setMode] = useThemeSwitch();
   const [click, setClick] = useState(false);
 
+/**
+ * Toggles the state of the 'click' variable.
+ * This function is typically used to handle click events or other actions that require flipping a boolean state.
+ *
+ * @function toggle
+ */
 const toggle = () =>{
   setClick(!click)
 }

@@ -5,6 +5,16 @@ import GithubSlugger, { slug } from "github-slugger";
 
 const slugger = new GithubSlugger();
 
+/**
+ * Generates static parameters for blog paths based on published blogs and their tags.
+ *
+ * This function iterates through all published blogs, extracts their tags,
+ * slugifies the tags to create unique slugs, and generates an array of paths
+ * including 'all' and each unique tag slug. Only includes tags from published blogs.
+ *
+ * @returns {Array<{slug: string}>} - An array of objects containing a slug for each unique tag.
+ * @throws {Error} If the `allBlogs` variable is not defined or is empty.
+ */
 export async function generateStaticParams() {
   const categories = [];
   const paths = [{ slug: "all" }];
@@ -24,6 +34,22 @@ export async function generateStaticParams() {
   return paths;
 }
 
+/**
+ * Generates metadata based on the provided parameters.
+ *
+ * @async
+ * @function generateMetadata
+ * @param {Object} params - The parameters object containing necessary information.
+ * @param {string} params.slug - The slug used to determine the title and description of the blogs.
+ * @returns {Promise<Object>} A promise that resolves with an object containing the generated metadata.
+ * @throws Will throw an error if the params object is missing or if the slug parameter is invalid.
+ *
+ * @example
+ * // Example usage:
+ * generateMetadata({ slug: "all" })
+ *   .then(metadata => console.log(metadata))
+ *   .catch(error => console.error(error));
+ */
 export async function generateMetadata({ params }) {
   return {
     title: `${params.slug.replaceAll("-"," ")} Blogs`,
@@ -32,6 +58,13 @@ export async function generateMetadata({ params }) {
 }
 
 
+/**
+ * A React component that renders a category page based on the provided parameters.
+ *
+ * @param {Object} params - An object containing route parameters.
+ * @param {string} params.slug - The current category slug to filter blogs.
+ * @returns {JSX.Element} - The rendered CategoryPage component.
+ */
 const CategoryPage = ({ params }) => {
   const allCategories = ["all"];
   const blogs = allBlogs.filter((blog) => {

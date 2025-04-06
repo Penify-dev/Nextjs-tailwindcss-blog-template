@@ -14,6 +14,11 @@ const SkillList = [
   "sanity",
 ];
 
+/**
+ * Represents a component that displays the list of skills a person is comfortable with.
+ *
+ * @returns {JSX.Element} The JSX element representing the skills section.
+ */
 const Skills = () => {
   return (
     <section className="w-full flex flex-col p-5 xs:p-10 sm:p-12 md:p-16 lg:p-20 border-b-2 border-solid border-dark dark:border-light

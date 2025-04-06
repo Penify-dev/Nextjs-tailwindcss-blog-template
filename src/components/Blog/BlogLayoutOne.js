@@ -4,6 +4,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { slug } from "github-slugger";
 
+/**
+ * A React component that displays blog layout with an image and title.
+ *
+ * @param {Object} props - The component's properties.
+ * @param {Object} props.blog - The blog data object containing details such as image, title, and tags.
+ * @returns {JSX.Element} - The rendered blog layout component.
+ */
 const BlogLayoutOne = ({ blog }) => {
   return (
     <div className="group inline-block overflow-hidden rounded-xl">

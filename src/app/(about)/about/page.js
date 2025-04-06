@@ -8,6 +8,12 @@ export const metadata = {
   description: `Here are some details about my self.`,
 };
 
+/**
+ * Renders the About component.
+ * This component includes an overview cover section, skills section, and a contact message for potential projects.
+ *
+ * @returns {JSX.Element} - The rendered JSX element.
+ */
 export default function About() {
   return (
     <>

@@ -1,5 +1,12 @@
 import React from "react";
 
+/**
+ * A React component that renders a div with a list of insights, styled to roll across the screen.
+ *
+ * @param {Object} props - The properties for this component.
+ * @param {Array<String>} props.insights - An array of strings representing the insights to display.
+ * @returns {JSX.Element} A React element representing the InsightRoll component.
+ */
 const InsightRoll = ({ insights }) => {
   return (
     <div className="w-full bg-accent dark:bg-accentDark text-light dark:text-dark whitespace-nowrap overflow-hidden">
