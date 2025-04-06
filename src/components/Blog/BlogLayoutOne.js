@@ -4,6 +4,32 @@ import Link from "next/link";
 import Image from "next/image";
 import { slug } from "github-slugger";
 
+/**
+ * A React component that displays a blog post layout with various styles and elements.
+ *
+ * @param {Object} props - The component's props.
+ * @param {Object} props.blog - An object representing the blog post data.
+ * @param {string} props.blog.image.filePath - The file path of the blog post image.
+ * @param {string} props.blog.image.blurhashDataUrl - The blur hash data URL for the blog post image.
+ * @param {string} props.blog.title - The title of the blog post.
+ * @param {Array} props.blog.tags - An array of tags associated with the blog post.
+ * @param {string} props.blog.url - The URL of the blog post.
+ *
+ * @returns {JSX.Element} - A React JSX element representing the blog post layout.
+ *
+ * @example
+ * <BlogLayoutOne
+ *   blog={{
+ *     image: {
+ *       filePath: "/path/to/image.jpg",
+ *       blurhashDataUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA...",
+ *     },
+ *     title: "Example Blog Post",
+ *     tags: ["example"],
+ *     url: "/blog/example-post"
+ *   }}
+ * />
+ */
 const BlogLayoutOne = ({ blog }) => {
   return (
     <div className="group inline-block overflow-hidden rounded-xl">

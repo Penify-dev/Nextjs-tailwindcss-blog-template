@@ -53,6 +53,18 @@ export const metadata = {
   },
 };
 
+/**
+ * Represents the root layout component of an application.
+ *
+ * @param {Object} props - The props for the RootLayout component.
+ * @param {JSX.Element} props.children - The children components to render within the root layout.
+ * @returns {JSX.Element} The rendered HTML structure with a dark theme switcher script, header, footer, and body content.
+ *
+ * Example:
+ * <RootLayout>
+ *   <SomeChildComponent />
+ * </RootLayout>
+ */
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

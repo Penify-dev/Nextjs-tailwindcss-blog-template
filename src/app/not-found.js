@@ -1,5 +1,10 @@
 import Link from "next/link";
 
+/**
+ * A functional component that renders a 404 error page indicating that a requested page was not found.
+ *
+ * @returns {JSX.Element} - The rendered JSX for the 404 error page.
+ */
 export default function NotFound() {
   return (
     <main className="my-32 w-full dark:bg-dark flex justify-center font-mr">

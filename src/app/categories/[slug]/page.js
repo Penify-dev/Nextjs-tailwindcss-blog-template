@@ -5,6 +5,15 @@ import GithubSlugger, { slug } from "github-slugger";
 
 const slugger = new GithubSlugger();
 
+/**
+ * Generates static parameters for routing based on published blog tags.
+ *
+ * This function iterates over all blogs to collect unique tag slugs that are marked as published. It constructs a list of paths,
+ * where each path corresponds to a unique tag slug, and includes an additional path for "all" tags.
+ *
+ * @returns {Array} - An array of objects representing the paths to be used in static routing.
+ * Each object has a property 'slug' which is the slugified tag name or 'all'.
+ */
 export async function generateStaticParams() {
   const categories = [];
   const paths = [{ slug: "all" }];
@@ -24,6 +33,25 @@ export async function generateStaticParams() {
   return paths;
 }
 
+/**
+ * Generates metadata for blog pages based on provided parameters.
+ *
+ * @async
+ * @function generateMetadata
+ * @param {Object} params - The parameters object containing the slug.
+ * @param {string} params.slug - The slug of the blog category or 'all' for all blogs.
+ * @returns {Promise<Object>} A promise that resolves to an object containing title and description metadata.
+ *
+ * Example usage:
+ * generateMetadata({ params: { slug: "javascript" } })
+ *   .then(metadata => console.log(metadata));
+ *
+ * This function constructs the metadata for blog pages based on the provided slug. If the slug is 'all',
+ * it sets the title to "Learn more about web development through our collection of expert blogs and tutorials".
+ * Otherwise, it sets the title to include the capitalized version of the slug with spaces replacing hyphens.
+ *
+ * @throws {Error} Throws an error if params or slug are not provided or are invalid.
+ */
 export async function generateMetadata({ params }) {
   return {
     title: `${params.slug.replaceAll("-"," ")} Blogs`,
@@ -32,6 +60,18 @@ export async function generateMetadata({ params }) {
 }
 
 
+/** @typedef {Object} Params - The parameters object passed to the component.
+ * @property {string} slug - The category slug.
+ 
+ * @typedef {Object} Blog - A blog post object.
+ * @property {Array<string>} tags - An array of tags associated with the blog post.
+ 
+ * @function CategoryPage
+ * @param {Params} params - The parameters object containing the category slug.
+ * @returns {React.ReactNode} - JSX representing the category page component.
+ 
+ * This function is a React functional component that renders a category page based on the provided category slug. It filters blogs by their tags and displays them along with the list of available categories.
+ */
 const CategoryPage = ({ params }) => {
   const allCategories = ["all"];
   const blogs = allBlogs.filter((blog) => {

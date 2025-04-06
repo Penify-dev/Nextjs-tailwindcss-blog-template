@@ -8,6 +8,12 @@ export const metadata = {
   description: `Here are some details about my self.`,
 };
 
+/**
+ * Functional component that renders the main page of an application or website.
+ * The component includes sections for cover, skills, and contact information.
+ *
+ * @returns {JSX.Element} - Returns a JSX element representing the main content of the page.
+ */
 export default function About() {
   return (
     <>

@@ -3,6 +3,13 @@ import Link from "next/link";
 import React from "react";
 import BlogLayoutThree from "../Blog/BlogLayoutThree";
 
+/**
+ * React component that renders a section displaying recent blog posts.
+ *
+ * @param {Object} props - The component props.
+ * @param {Array<Object>} props.blogs - An array of blog objects to be displayed.
+ * @returns {JSX.Element} - The rendered RecentPosts component.
+ */
 const RecentPosts = ({ blogs }) => {
   const sortedBlogs = sortBlogs(blogs);
   return (

@@ -7,11 +7,25 @@ import { useThemeSwitch } from "../Hooks/useThemeSwitch";
 import { useState } from "react";
 import { cx } from "@/src/utils";
 
+/**
+ * A functional component that represents the header of a web page. It includes navigation links, a theme switcher button, and social media icons.
+ *
+ * @returns {JSX.Element} - The rendered JSX for the Header component.
+ */
 const Header = () => {
 
   const [mode, setMode] = useThemeSwitch();
   const [click, setClick] = useState(false);
 
+/**
+ * Toggles the state of 'click'.
+ *
+ * @function toggle
+ * @returns {undefined} - This function does not return any value.
+ *
+ * Example usage:
+ * toggle();
+ */
 const toggle = () =>{
   setClick(!click)
 }
