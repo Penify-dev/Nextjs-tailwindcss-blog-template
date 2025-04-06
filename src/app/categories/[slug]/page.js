@@ -5,6 +5,15 @@ import GithubSlugger, { slug } from "github-slugger";
 
 const slugger = new GithubSlugger();
 
+/**
+ * Generates static parameters for blog paths.
+ *
+ * This function iterates through all published blogs and extracts unique tags,
+ * slugifying them to create category slugs. It then constructs an array of path objects,
+ * each representing a blog category or the 'all' category.
+ *
+ * @returns {Array<{slug: string}>} - An array of path objects, each with a 'slug' property.
+ */
 export async function generateStaticParams() {
   const categories = [];
   const paths = [{ slug: "all" }];
@@ -24,6 +33,33 @@ export async function generateStaticParams() {
   return paths;
 }
 
+/**
+ * Generates metadata for blog pages based on the provided parameters.
+ *
+ * @param {Object} params - The parameters object containing necessary data.
+ * @param {string} params.slug - The slug of the blog or "all" if no specific blog is selected.
+ * @returns {Object} - An object containing the title and description for the blog page.
+ *
+ * @example
+ * const metadata = await generateMetadata({ params: { slug: "javascript" } });
+ * console.log(metadata);
+ * // Output:
+ * // {
+ * //   title: 'JavaScript Blogs',
+ * //   description: 'Learn more about JavaScript through our collection of expert blogs and tutorials'
+ * // }
+ *
+ * @example
+ * const allBlogsMetadata = await generateMetadata({ params: { slug: "all" } });
+ * console.log(allBlogsMetadata);
+ * // Output:
+ * // {
+ * //   title: 'All Blogs',
+ * //   description: 'Learn more about web development through our collection of expert blogs and tutorials'
+ * // }
+ *
+ * @throws {Error} - If the params object is missing or does not contain a slug.
+ */
 export async function generateMetadata({ params }) {
   return {
     title: `${params.slug.replaceAll("-"," ")} Blogs`,
@@ -32,6 +68,13 @@ export async function generateMetadata({ params }) {
 }
 
 
+/**
+ * A React component that renders a category page based on the provided parameters.
+ *
+ * @param {Object} params - The URL parameters.
+ * @param {string} params.slug - The slug of the category to filter by. If 'all', displays all blogs.
+ * @returns {JSX.Element} A React element representing the category page.
+ */
 const CategoryPage = ({ params }) => {
   const allCategories = ["all"];
   const blogs = allBlogs.filter((blog) => {

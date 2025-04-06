@@ -2,6 +2,11 @@ import Image from "next/image"
 import Link from "next/link"
 import profileImg from "@/public/profile-img.png"
 
+/**
+ * Represents the Logo component which renders the CodeBucks logo with a link to the homepage.
+ *
+ * @returns {JSX.Element} - The rendered Logo component.
+ */
 const Logo = () => {
   return (
     <Link href="/" className="flex items-center text-dark dark:text-light">

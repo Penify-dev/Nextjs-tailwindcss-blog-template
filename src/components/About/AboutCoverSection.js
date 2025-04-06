@@ -2,6 +2,13 @@ import Image from 'next/image'
 import React from 'react'
 import profileCharacter from "../../../public/character.png"
 
+/**
+ * React functional component that renders an about cover section.
+ * This section includes an image on the left and text content on the right,
+ * featuring a motivational mantra, description, and personal attributes.
+ *
+ * @returns {React.ReactNode} - The rendered AboutCoverSection component.
+ */
 const AboutCoverSection = () => {
   return (
     <section className='w-full md:h-[75vh] border-b-2 border-solid border-dark dark:border-light flex flex-col md:flex-row items-center justify-center text-dark dark:text-light'>

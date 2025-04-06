@@ -7,11 +7,28 @@ import { useThemeSwitch } from "../Hooks/useThemeSwitch";
 import { useState } from "react";
 import { cx } from "@/src/utils";
 
+/**
+ * A React functional component that renders a header with various elements including a logo,
+ * a hamburger menu for mobile view, navigation links, and social media icons.
+ *
+ * @returns {JSX.Element} The rendered header element.
+ */
 const Header = () => {
 
   const [mode, setMode] = useThemeSwitch();
   const [click, setClick] = useState(false);
 
+/**
+ * Toggles the state of a boolean variable `click`.
+ *
+ * This function is intended to flip the value of the `click` variable between true and false.
+ *
+ * @function toggle
+ * @example
+ * // Before calling toggle(), click is likely false or undefined.
+ * toggle();
+ * // After calling toggle(), click should be true.
+ */
 const toggle = () =>{
   setClick(!click)
 }

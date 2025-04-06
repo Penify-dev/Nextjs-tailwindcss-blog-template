@@ -8,6 +8,16 @@ const mdxComponents = {
     Image
 }
 
+/**
+ * React component that renders Markdown content using MDX.
+ *
+ * @param {Object} props - The component's properties.
+ * @param {Object} props.blog - The blog object containing the Markdown content to render.
+ * @returns {JSX.Element} - The rendered JSX element.
+ *
+ * @example
+ * <RenderMdx blog={blogData} />
+ */
 const RenderMdx = ({blog}) => {
 
     const MDXContent = useMDXComponent(blog.body.code)

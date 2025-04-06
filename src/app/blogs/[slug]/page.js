@@ -6,10 +6,32 @@ import { allBlogs } from "contentlayer/generated";
 import { slug } from "github-slugger";
 import Image from "next/image";
 
+/**
+ * Generates static parameters for blog slugs.
+ *
+ * @async
+ * @returns {Array<{ slug: string }>} An array of objects containing the slug for each blog.
+ *
+ * @throws {Error} If there is an error processing the blogs.
+ */
 export async function generateStaticParams() {
   return allBlogs.map((blog) => ({ slug: blog._raw.flattenedPath }));
 }
 
+/**
+ * Generates metadata for a blog post based on the provided parameters.
+ *
+ * @async
+ * @function generateMetadata
+ * @param {Object} params - An object containing the parameters for the function.
+ * @param {string} params.slug - The slug of the blog post to fetch metadata for.
+ * @returns {Promise<Object|null>} - A Promise that resolves with an object containing blog metadata or null if no blog is found.
+ *
+ * @example
+ * generateMetadata({ slug: 'example-blog' }).then(metadata => {
+ *   console.log(metadata);
+ * });
+ */
 export async function generateMetadata({ params }) {
   const blog = allBlogs.find((blog) => blog._raw.flattenedPath === params.slug);
   if (!blog) {
@@ -56,6 +78,14 @@ export async function generateMetadata({ params }) {
   };
 }
 
+/**
+ * React component that renders an individual blog post page.
+ *
+ * @param {Object} params - The parameters passed to the component.
+ * @param {string} params.slug - The slug of the blog post.
+ *
+ * @returns {JSX.Element} The rendered BlogPage component.
+ */
 export default function BlogPage({ params }) {
   const blog = allBlogs.find((blog) => blog._raw.flattenedPath === params.slug);
 

@@ -4,6 +4,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { slug } from "github-slugger";
 
+/**
+ * Renders a blog layout with a given blog object.
+ *
+ * @param {Object} props - The component props.
+ * @param {Object} props.blog - The blog object containing details about the blog post.
+ * @returns {JSX.Element} - The rendered blog layout.
+ *
+ * Example:
+ * <BlogLayoutOne blog={blogData} />
+ */
 const BlogLayoutOne = ({ blog }) => {
   return (
     <div className="group inline-block overflow-hidden rounded-xl">

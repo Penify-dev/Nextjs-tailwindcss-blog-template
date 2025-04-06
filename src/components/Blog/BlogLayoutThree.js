@@ -3,6 +3,21 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+/**
+ * A React component representing a blog layout with specific styling and functionality.
+ *
+ * @param {Object} props - The props for the BlogLayoutThree component.
+ * @param {Object} props.blog - The blog object containing details about the blog post.
+ * @param {string} props.blog.url - The URL of the blog post.
+ * @param {Object} props.blog.image - The image object containing details about the blog's image.
+ * @param {string} props.blog.image.filePath - The file path of the blog's image.
+ * @param {string} props.blog.image.blurhashDataUrl - The blurhash data URL for the image.
+ * @param {string} props.blog.title - The title of the blog post.
+ * @param {Array<string>} props.blog.tags - An array of tags associated with the blog post.
+ * @param {Date} props.blog.publishedAt - The publication date of the blog post.
+ *
+ * @returns {React.ReactNode} - The rendered BlogLayoutThree component.
+ */
 const BlogLayoutThree = ({ blog }) => {
   return (
     <div className="group flex flex-col items-center text-dark dark:text-light">

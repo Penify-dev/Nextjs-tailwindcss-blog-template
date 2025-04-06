@@ -3,6 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+/**
+ * A React component representing the layout of a blog post.
+ *
+ * @param {Object} props - The props for the BlogLayoutTwo component.
+ * @param {Object} props.blog - The blog post data to be displayed.
+ * @returns {JSX.Element} - The rendered BlogLayoutTwo component.
+ */
 const BlogLayoutTwo = ({ blog }) => {
   return (
     <div className="group grid grid-cols-12 gap-4 items-center text-dark dark:text-light">

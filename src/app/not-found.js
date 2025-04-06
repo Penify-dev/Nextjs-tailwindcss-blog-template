@@ -1,5 +1,15 @@
 import Link from "next/link";
 
+/**
+ * A React component that renders a "404 Page Not Found" error page.
+ *
+ * @returns {JSX.Element} The rendered "404 Page Not Found" page.
+ *
+ * Example usage:
+ * ```
+ * <NotFound />
+ * ```
+ */
 export default function NotFound() {
   return (
     <main className="my-32 w-full dark:bg-dark flex justify-center font-mr">
