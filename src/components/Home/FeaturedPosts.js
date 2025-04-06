@@ -3,6 +3,13 @@ import React from "react";
 import BlogLayoutOne from "../Blog/BlogLayoutOne";
 import BlogLayoutTwo from "../Blog/BlogLayoutTwo";
 
+/**
+ * A React component that renders featured posts from a list of blogs.
+ *
+ * @param {Object} props - The properties object for the component.
+ * @param {Array} props.blogs - An array of blog objects to be rendered as featured posts.
+ * @returns {JSX.Element} - The JSX element representing the FeaturedPosts component.
+ */
 const FeaturedPosts = ({ blogs }) => {
   const sortedBlogs = sortBlogs(blogs);
   return <section className="w-full mt-16 sm:mt-24  md:mt-32 px-5 sm:px-10 md:px-24  sxl:px-32 flex flex-col items-center justify-center">

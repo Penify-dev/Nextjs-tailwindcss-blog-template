@@ -53,6 +53,16 @@ export const metadata = {
   },
 };
 
+/**
+ * The root layout component of the application.
+ * This component provides the structure for the entire application,
+ * including the HTML structure, body styling, theme switching script,
+ * header, children components, and footer.
+ *
+ * @param {Object} props - The properties passed to the RootLayout component.
+ * @param {JSX.Element} props.children - The child components to be rendered within the root layout.
+ * @returns {JSX.Element} - The JSX element representing the root layout of the application.
+ */
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

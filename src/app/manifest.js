@@ -1,3 +1,8 @@
+/**
+ * Generates the manifest object for a Next.js application.
+ *
+ * @returns {Object} - The manifest object containing various configuration properties.
+ */
 export default function manifest() {
     return {
       name: 'Next.js App',

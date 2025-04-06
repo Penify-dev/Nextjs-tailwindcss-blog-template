@@ -8,6 +8,12 @@ export const metadata = {
   description: `Here are some details about my self.`,
 };
 
+/**
+ * Renders the main page of the application with an introduction section,
+ * skills showcase, and a contact form to get in touch.
+ *
+ * @returns {JSX.Element} - The JSX element representing the about page.
+ */
 export default function About() {
   return (
     <>
